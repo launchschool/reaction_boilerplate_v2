@@ -10,7 +10,8 @@ export const fetchBoards = createAsyncThunk("boards/fetchBoards", async () => {
 
 export const createBoard = createAsyncThunk(
   "boards/createBoard",
-  async (newBoard, callback) => {
+  async (args) => {
+    const {newBoard, callback} = args;
     const data = await apiClient.createBoard(newBoard);
     if (callback) {
       callback;
