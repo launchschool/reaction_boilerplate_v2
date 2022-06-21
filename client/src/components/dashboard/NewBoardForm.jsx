@@ -10,7 +10,7 @@ const NewBoardForm = (props) => {
 
   const addBoard = useCallback(
     (newBoard, callback) => {
-      dispatch(createBoard(newBoard, callback));
+      dispatch(createBoard({newBoard, callback}));
     },
     [dispatch]
   );
